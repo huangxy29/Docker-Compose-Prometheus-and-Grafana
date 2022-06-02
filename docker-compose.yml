@@ -39,6 +39,7 @@ services:
     command:
       - '--config.file=/etc/alertmanager/config.yml'
       - '--storage.path=/alertmanager'
+      - '--cluster.advertise-address=0.0.0.0:9093'
     restart: unless-stopped
     expose:
       - 9093
