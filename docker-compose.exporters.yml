@@ -1,10 +1,10 @@
-version: '2.1'
+version: '3.9'
 
 services:
 
-  nodeexporter:
-    image: prom/node-exporter:v0.18.1
-    container_name: nodeexporter
+  node-exporter:
+    image: prom/node-exporter:v1.3.1
+    container_name: node-exporter
     volumes:
       - /proc:/host/proc:ro
       - /sys:/host/sys:ro
@@ -20,7 +20,7 @@ services:
       org.label-schema.group: "monitoring"
 
   cadvisor:
-    image: gcr.io/google-containers/cadvisor:v0.34.0
+    image: huangxinyu/cadvisor:v0.39.3
     container_name: cadvisor
     volumes:
       - /:/rootfs:ro
